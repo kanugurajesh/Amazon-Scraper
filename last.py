@@ -19,11 +19,19 @@ product_url = []
 start = 1
 # Enter the number of pages you want to scrape
 end = 2
+directory_name = "products"
 
 # initializing the chromedriver
 # options = webdriver.ChromeOptions()
 driver = webdriver.Chrome()
 driver.implicitly_wait(10)
+
+# checking whether the directory exists or not
+def check_and_create_directory(directory_name):
+    if not os.path.exists(directory_name):
+        os.mkdir(directory_name)
+
+check_and_create_directory(directory_name)
 
 # creating a file writer function to write page source to a html file
 def file_writer(name,val):
@@ -88,14 +96,19 @@ def parser_writer(file,num):
         product_manufacturer = dom.xpath('//*[@id="detailBullets_feature_div"]/ul/li[8]/span/span[2]')[0].text
         product_description_parent = soup.find(class_='a-unordered-list a-vertical a-spacing-mini')
         product_description = product_description_parent.find_all(class_='a-list-item')
+        # concatenating the currency symbol and price
         product_price = product_price_symbol + product_price
 
+        # list containing all the descriptions
         descript = []
 
+        # looping through the description elements
         for i in product_description:
+            # appending the text in the description elements to the descript list
             descript.append(i.text.strip())
         result = ','.join(descript)
 
+        # appending all the data to the products.csv file
         with open('products.csv','a',newline='') as file:
             writer = csv.writer(file)
             row = [num,product_url[num-1],product_name,product_price,product_rating,product_rating_count,result,product_asin,product_manufacturer]
