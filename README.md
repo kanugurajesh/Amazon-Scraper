@@ -16,6 +16,8 @@ This is a amazon scraper build using selenium it can scrape product data from th
 # usage
 
 1. simply run the project in windows <code>python amazon_scraper.py</code> and in linux <code>python3 amazon_scraper.py</code>
+1.To run project in windows run the command <code>python amazon_scraper.py</code>
+2.To run the project in linux run the command <code>python3 amazon_scraper.py</code>
 
 # project working
 
