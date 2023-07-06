@@ -7,6 +7,7 @@ This is a amazon scraper build using selenium it can scrape product data from th
 1.The code is same for both windows and linux you need to install seperate chromedriver for seperate environments you can install chromedriver at <code>https://chromedriver.chromium.org/downloads</code>
 <br>
 2.setup a python environment using the command <code>python -m venv myenv</code>
+<br>
 3.activate the python virtual environment for windows <code>myenv/Scripts/activate.ps1</code> and for linux <code>source myenv/bin/activate</code>
 <br>
 4.install the python modules in the python virtual environment using the command <code>pip install -r requirements.txt</code>
