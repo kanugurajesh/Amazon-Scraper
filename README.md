@@ -21,4 +21,4 @@ This is a amazon scraper build using selenium it can scrape product data from th
 
 1.When you first run the project the selenium will scrape the product and write each product source code into html fiels in the products directory
 <br>
-2>In the next step the data is extracted from the html files and written to output.csv file
+2.In the next step the data is extracted from the html files and written to output.csv file
