@@ -3,9 +3,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
+from lxml import etree
 import time
 import csv
-import bs4
+import os
 
 # Enter the url of the product
 default_url = "https://www.amazon.in/s?k=bags&crid=3RXHWM4CTEH4C&sprefix=bags%2Caps%2C433&ref=nb_sb_noss_1"
@@ -63,26 +65,18 @@ with open('products.csv','w',newline='') as file:
     header = ["product url","product name","product price","rating","number of reviews","description","asin","danufacturer"]
     writer.writerow(header)
 
-from bs4 import BeautifulSoup
-from lxml import etree
-import csv
-import os
-
-with open('products.csv','w',newline='') as file:
-    writer = csv.writer(file)
-    header = ["s.no","product url","product name","product price","rating","number of reviews","description","asin","manufacturer"]
-    writer.writerow(header)
-
+# variable to give serial numbers in csv
 num = 1
 
+# function to extract data fro html and write it to csv
 def parser_writer(file,num):
     try:
         with open(file,'r') as f:
             soup = BeautifulSoup(f,'html.parser')
         # creating a dom tree
-
         dom = etree.HTML(str(soup))
 
+        # getting all the elements with attributes
         product_name = soup.find(class_='a-size-large product-title-word-break').text.strip()
         product_rating_count = soup.find(id='acrCustomerReviewText').text.split(" ")[0].strip()
         
@@ -106,13 +100,15 @@ def parser_writer(file,num):
             writer = csv.writer(file)
             row = [num,product_url[num-1],product_name,product_price,product_rating,product_rating_count,result,product_asin,product_manufacturer]
             writer.writerow(row)
+            num += 1
     except FileNotFoundError:
         print(f"File '{file}' not found. {num}")
     except Exception as e:
         print(f"An error occurred: {e} {num}")
 
+# getting all the file names in the directory
 file_names = os.listdir("./products")
 
+# iterating over the products
 for file_name in file_names:
     parser_writer(f"./products/{file_name}",num)
-    num += 1
