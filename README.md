@@ -34,3 +34,7 @@ This is a amazon scraper build using selenium it can scrape product data from th
 3.<code>automate.bat</code> is used to push code to github in windows
 <br>
 4.<code>automate.sh</code> is used to push code to github in linux
+
+# project working video
+
+<code></code>
