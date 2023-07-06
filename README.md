@@ -4,3 +4,4 @@ This is a amazon scraper build using selenium it can scrape product data from th
 
 ## project-setup
 
+1.The code is same for both windows and linux you need to install seperate chromedriver for seperate environments you can install chromedriver at <code>https://chromedriver.chromium.org/downloads</code>
