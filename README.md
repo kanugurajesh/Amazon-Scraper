@@ -16,3 +16,9 @@ This is a amazon scraper build using selenium it can scrape product data from th
 # usage
 
 1. simply run the project in windows <code>python amazon_scraper.py</code> and in linux <code>python3 amazon_scraper.py</code>
+
+# project-working
+
+1.When you first run the project the selenium will scrape the product and write each product source code into html fiels in the products directory
+<br>
+2>In the next step the data is extracted from the html files and written to output.csv file
