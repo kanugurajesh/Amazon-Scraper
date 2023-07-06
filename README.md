@@ -2,7 +2,7 @@
 
 This is a amazon scraper build using selenium it can scrape product data from the website and write it to a csv file i have used selenium because it resembles a bit like human and it is a advanced testing frameworks which offers many advantages for scraping and i also used beautiful soup to extract data from the scraped data
 
-## project-setup
+## project setup
 
 1.The code is same for both windows and linux you need to install seperate chromedriver for seperate environments you can install chromedriver at <code>https://chromedriver.chromium.org/downloads</code>
 <br>
@@ -17,8 +17,18 @@ This is a amazon scraper build using selenium it can scrape product data from th
 
 1. simply run the project in windows <code>python amazon_scraper.py</code> and in linux <code>python3 amazon_scraper.py</code>
 
-# project-working
+# project working
 
 1.When you first run the project the selenium will scrape the product and write each product source code into html fiels in the products directory
 <br>
 2.In the next step the data is extracted from the html files and written to output.csv file
+
+# project files
+
+1.<code>amazon-scraper.py</code> is the main python file which scrapes and writes data to the csv files
+<br>
+2.<code>requirements.txt</code> is the file which contains all the modules required by the project to function without errors
+<br>
+3.<code>automate.bat</code> is used to push code to github in windows
+<br>
+4.<code>automate.sh</code> is used to push code to github in linux
