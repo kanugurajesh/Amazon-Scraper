@@ -35,7 +35,7 @@ check_and_create_directory(directory_name)
 
 # creating a file writer function to write page source to a html file
 def file_writer(name,val):
-    with open(f"{name}_{val}.html","w") as f:
+    with open(f"{name}_{val}.html","w",encoding='utf-8') as f:
         sourcer = driver.page_source
         f.write(sourcer)
 
