@@ -51,6 +51,5 @@ def parser_writer(file,num):
 file_names = os.listdir("./products")
 
 for file_name in file_names:
-    # global num
     parser_writer(f"./products/{file_name}",num)
     num += 1
