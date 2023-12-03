@@ -1,4 +1,4 @@
-# amazon-scraper
+# Amazon Scraper
 
 This is a amazon scraper build using selenium it can scrape product data from the website and write it to a csv file i have used selenium because it resembles a bit like human and it is a advanced testing frameworks which offers many advantages for scraping and i also used beautiful soup to extract data from the scraped data
 
